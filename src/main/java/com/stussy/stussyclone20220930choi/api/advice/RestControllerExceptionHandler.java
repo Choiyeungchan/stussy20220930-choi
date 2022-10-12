@@ -2,11 +2,11 @@ package com.stussy.stussyclone20220930choi.api.advice;
 
 import com.stussy.stussyclone20220930choi.dto.CMRespDto;
 import com.stussy.stussyclone20220930choi.exception.CustomValidationException;
-import org.jetbrains.annotations.NotNull;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import javax.validation.constraints.NotNull;
 
 @RestController
 @RestControllerAdvice
