@@ -41,4 +41,19 @@
             um.email = #{email}
 
     </select>
+
+    <insert id="saveUser" parameterType="com.stussy.stussyclone20220930choi.domain.User">
+        insert into
+        user_mst
+        values(
+        0,
+        #{email},
+        #{password},
+        #{name},
+        #{provider},
+        #{role_id},
+        now(),
+        now()
+        )
+    </insert>
 </mapper>

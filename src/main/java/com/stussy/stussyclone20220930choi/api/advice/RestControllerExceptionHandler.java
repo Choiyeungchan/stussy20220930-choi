@@ -1,21 +1,27 @@
 package com.stussy.stussyclone20220930choi.api.advice;
 
 import com.stussy.stussyclone20220930choi.dto.CMRespDto;
+import com.stussy.stussyclone20220930choi.exception.CustomInternalServerErrorException;
 import com.stussy.stussyclone20220930choi.exception.CustomValidationException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import javax.validation.constraints.NotNull;
 
 @RestController
 @RestControllerAdvice
-public  class RestControllerExceptionHandler {
+public class RestControllerExceptionHandler {
 
     @ExceptionHandler(CustomValidationException.class)
-    public ResponseEntity<?> validationErrorException(@NotNull CustomValidationException e) {
+    public ResponseEntity<?> validationErrorException(CustomValidationException e) {
 
         return ResponseEntity.badRequest().body(new CMRespDto<>(e.getMessage(), e.getErrorMap()));
+    }
+
+    @ExceptionHandler(CustomInternalServerErrorException.class)
+    public ResponseEntity<?> internalServerErrorException(CustomInternalServerErrorException e) {
+
+        return ResponseEntity.internalServerError().body(new CMRespDto<>(e.getMessage(), null));
     }
 
 }

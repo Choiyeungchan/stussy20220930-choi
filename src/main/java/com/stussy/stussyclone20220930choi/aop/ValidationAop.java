@@ -18,9 +18,7 @@ import java.util.Map;
 public class ValidationAop {
 
     @Pointcut("execution(* com.stussy.stussyclone20220930choi..*Api.*(..))")
-    private void executionPointCut() {
-    }
-
+    private void executionPointCut() {}
 
     @Around("executionPointCut()")
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
