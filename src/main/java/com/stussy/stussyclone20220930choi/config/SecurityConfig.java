@@ -1,4 +1,4 @@
-package com.stussy.stussyclone20220930choi.repository.config;
+package com.stussy.stussyclone20220930choi.config;
 
 
 import com.stussy.stussyclone20220930choi.security.AuthFailureHandler;
@@ -26,8 +26,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/account/mypage", "/index")
                 .authenticated()
-                .antMatchers("/admin/**")   //admin의 모든 하위 주소로 들어오는 어떠한 권한이든 간에
-                .hasRole("ADMIN")   //ADMIN권한을 가져야 한다.
+//                .antMatchers("/admin/**")   //admin의 모든 하위 주소로 들어오는 어떠한 권한이든 간에
+//                .hasRole("ADMIN")   //ADMIN권한을 가져야 한다.
+                .antMatchers("/admin/**","/api/admin/**")
+                .permitAll()
                 .anyRequest()
                 .permitAll()
                 .and()
