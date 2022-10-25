@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Account</title>
-    <link rel="stylesheet" href="/static/css/style.css">
-    <link rel="stylesheet" href="/static/css/header.css">
-    <link rel="stylesheet" href="/static/css/account.css">
+    <title>Document</title>
 </head>
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<link rel="stylesheet" href="/static/css/style.css">
+<link rel="stylesheet" href="/static/css/header.css">
+<link rel="stylesheet" href="/static/css/collections_number.css">
+
 <body>
     <div id="container">
         <header>
@@ -54,44 +56,12 @@
             <script src="/static/js/header/header.js"></script>
         </header>
         <main>
-            <div class="login">
-                <h1 class="account-title">ACCOUNT</h1>
-                <div class="account-container">
-                    <section class="account-new">
-                        <h2 class="account-subtitle">회원가입</h2>
-                        <p class="account-content">회원가입을 하시면, 주문 조회와 개인정보 관리 및 빠른 체크아웃 등 다양한 혜택을 누리실 수 있습니다.</p>
-                        <button type="button" class="btn account-button">신규가입</button>
-                    </section>
-                    <section class="account-current">
-                        <form action="" method="post">
-                            <h2 class="account-subtitle">로그인</h2>
-                            <th:block th:if="${error == 'auth'}">
-                                <div class="errors">
-                                    <ul>
-                                        <li>이메일 또는 비밀번호가 잘못되었습니다.</li>
-                                    </ul>
-                                </div>
-                            </th:block>
-                            <th:block th:if="${error == 'passwordExpired'}">
-                                <div class="errors">
-                                    <ul>
-                                        <li>비밀번호 인증 5회 초과.</li>
-                                    </ul>
-                                </div>
-                            </th:block>
-                            <input type="email" class="account-input" name="email" th:value="${email}" placeholder="이메일" required>
-                            <input type="password" class="account-input" name="password" placeholder="비밀번호" required>
-                            <a class="find-password-link" href="">비밀번호를 잊으셨나요?</a>
-                            <button type="submit" class="btn account-button">로그인</button>
-                        </form>
-                    </section>
-                </div>
-            </div>
+            <ul class="collection-products">
+            </ul>
         </main>
         <footer>
-
         </footer>
     </div>
-    <script src="/static/js/account/login.js"></script>
+    <script src="/static/js/product/collections-scroll.js"></script>
 </body>
 </html>
