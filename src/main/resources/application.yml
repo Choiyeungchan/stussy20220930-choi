@@ -19,8 +19,3 @@ spring:
 mybatis:
   mapper-locations:
     - /mappers/*.xml
-
-
-
-file:
-  path: D:/chan/springboot/stussy20220930-choi/src/main/resources/static/upload/
